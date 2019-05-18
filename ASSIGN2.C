@@ -1,12 +1,13 @@
+//Assignment 2 by Dhruv Sharma
 #include<stdio.h>
 #include<conio.h>
 int large(int A[],int current_index,int size);  //Gives the best possible step
 int Can_Last_Be_Reached(int A[],int current_index,int n);//Checks if last element can be directly reached
 int All_zero_correction(int A[],int current_index,int size);//Checks if not possible to reach the end due to some zeros
-void display_path(int A[],int B[],int size);//To display the path
+void display_path(int A[],int B[],int size);//To display the path,If not needed,comment out the fn call in last if-else.
 //Best step is determined by max of A[i]+i,recursively
 void main()
-{	int A[100],B[100]; //B is present only to store the path,if required.
+{	int A[100],B[100]={0}; //B is present only to store the path,if required.
 	int n,i,steps=0,flag=1,current_index=0;
 	clrscr();
 	printf("Enter the size of the array:\n");
@@ -20,6 +21,7 @@ void main()
 	}
 	else if(n==1)
 	{     steps=0;
+	      i=0; 	
 	}
 	else
 	{       B[0]=0;
